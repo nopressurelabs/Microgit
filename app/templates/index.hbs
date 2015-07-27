@@ -1,0 +1,21 @@
+{{#each event in model}}
+    <li>
+      <div>
+        <strong>Github Event:</strong>
+        <p>id: {{event.id}}</p>
+        <p>type: {{event.type}}</p>
+        <p>github user: </p>
+        <p>
+          <a {{bindAttr href=event.actor.url}}>
+            <img style="width: 40px" {{bindAttr src=event.actor.avatar_url}}> {{event.actor.login}}
+          </a>
+        </p>
+        <p>github repo: </p>
+        <p>
+          <a {{bindAttr href=event.repo.url}}>
+            {{event.repo.name}}
+          </a>
+        </p>
+      </div>
+    </li>
+{{/each}}
